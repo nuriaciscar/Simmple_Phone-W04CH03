@@ -10,7 +10,9 @@ function App() {
         <div className="keyboard-container">
           <ol className="keyboard">
             <li>
-              <button className="key">1</button>
+              <button className="key" data-testid="1">
+                1
+              </button>
             </li>
             <li>
               <button className="key">2</button>
