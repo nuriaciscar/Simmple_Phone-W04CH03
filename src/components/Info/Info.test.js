@@ -1,4 +1,7 @@
-import Info from "./Info";
+import Info from "./Info.js";
+import { render } from "@testing-library/react";
+
+import { screen } from "@testing-library/react";
 
 describe("Given a Info component", () => {
   describe("When isCalling is true", () => {
@@ -6,7 +9,7 @@ describe("Given a Info component", () => {
       const isCalling = true;
       const expectedText = "Calling...";
 
-      render(<Info isCallling={isCalling} />);
+      render(<Info isCalling={isCalling} />);
       const textElement = screen.getByText(expectedText);
 
       expect(textElement).toBeInTheDocument();

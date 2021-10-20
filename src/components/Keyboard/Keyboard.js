@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const Keyboard = ({ text, actionOnClick }) => {
   return (
     <button onClick={actionOnClick} className="key">
-      {text}{" "}
+      {text}
     </button>
   );
 };
