@@ -11,7 +11,6 @@ const Key = ({ text, actionOnClick, className }) => {
 };
 
 Key.propTypes = {
-  text: PropTypes.string,
   actionOnClick: PropTypes.func,
 };
 
