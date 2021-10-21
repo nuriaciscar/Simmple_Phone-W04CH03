@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
-const Display = ({ text }) => {
-  return <span className="number">{text}</span>;
+const Display = ({ numbersDisplay }) => {
+  return <span className="number">{numbersDisplay.join("")}</span>;
 };
 
 Display.propTypes = {
