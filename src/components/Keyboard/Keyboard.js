@@ -15,7 +15,6 @@ const Keyboard = () => {
   const addNumber = (text) => {
     if (numbersDisplay.length < 9) {
       setNumbersDisplay([...numbersDisplay, text]);
-      console.log(numbersDisplay);
     }
   };
 
@@ -41,8 +40,8 @@ const Keyboard = () => {
 };
 
 Keyboard.propTypes = {
-  number: PropTypes.string.isRequired,
-  actionOnClick: PropTypes.func.isRequired,
+  number: PropTypes.string,
+  actionOnClick: PropTypes.func,
 };
 
 export default Keyboard;
