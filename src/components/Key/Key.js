@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
-const Key = ({ text, actionOnClick }) => {
+const Key = ({ text, actionOnClick, className }) => {
   return (
     <li>
-      <button onClick={actionOnClick} className="key">
+      <button onClick={() => actionOnClick(text)} className={className}>
         {text}
       </button>
     </li>
@@ -11,8 +11,8 @@ const Key = ({ text, actionOnClick }) => {
 };
 
 Key.propTypes = {
-  text: PropTypes.string.isRequired,
-  actionOnClick: PropTypes.func.isRequired,
+  text: PropTypes.string,
+  actionOnClick: PropTypes.func,
 };
 
 export default Key;
