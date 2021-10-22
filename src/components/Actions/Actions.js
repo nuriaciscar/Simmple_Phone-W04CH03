@@ -20,7 +20,8 @@ const Actions = () => {
     }
   };
 
-  const hangAction = () => {
+  const hangAction = (event) => {
+    event.preventDefault();
     setDisplayCall(false);
   };
 
