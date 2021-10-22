@@ -10,8 +10,6 @@ const Keyboard = () => {
 
   const { numbersDisplay, setNumbersDisplay } = useContext(PhoneContext);
 
-  console.log(numbersDisplay);
-
   const addNumber = (text) => {
     if (numbersDisplay.length < 9) {
       setNumbersDisplay([...numbersDisplay, text]);

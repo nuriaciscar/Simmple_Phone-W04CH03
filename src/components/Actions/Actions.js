@@ -10,22 +10,40 @@ const Actions = () => {
   const { numbersDisplay, setNumbersDisplay, displayCall, setDisplayCall } =
     useContext(PhoneContext);
 
-  const callAction = () => {
-    setDisplayCall(true);
+  const callAction = (e) => {
+    e.preventDefault();
+    if (numbersDisplay.length === 9) {
+      setDisplayCall(true);
+      setTimeout(() => {
+        setDisplayCall(false);
+      }, 5000);
+    }
+  };
+
+  const hangAction = () => {
+    setDisplayCall(false);
   };
 
   return (
     <>
       <div className="actions">
         <Display numbersDisplay={numbersDisplay} />
-        <Action
-          href={"Call"}
-          text={"Call"}
-          className={numbersDisplay.length === 9 ? "active call" : "call"}
-          actionOnClick={callAction}
-        />
-
-        <Action href={"Hang"} text={"Hang"} className={"off"} />
+        {!displayCall ? (
+          <Action
+            href={"Call"}
+            text={"Call"}
+            className={numbersDisplay.length === 9 ? "active call" : "call"}
+            actionOnClick={callAction}
+            disabled={true}
+          />
+        ) : (
+          <Action
+            href={"Hang"}
+            text={"Hang"}
+            className={displayCall ? "active hang" : "off"}
+            actionOnClick={hangAction}
+          />
+        )}
       </div>
     </>
   );
