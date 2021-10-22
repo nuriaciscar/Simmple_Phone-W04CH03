@@ -4,10 +4,10 @@ import { useContext } from "react";
 
 import "./Actions.css";
 import Display from "../Display/Display";
-import App from "../../App";
+
 
 const Actions = () => {
-  const { numbersDisplay, setNumbersDisplay, displayCall, setDisplayCall } =
+  const { numbersDisplay, displayCall, setDisplayCall } =
     useContext(PhoneContext);
 
   const callAction = (e) => {
